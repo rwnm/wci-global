@@ -1,55 +1,62 @@
 export default function Services() {
   const services = [
     {
-      title: "Technical Advice",
-      desc: "Our tribologists provide in-depth support for equipment development and commissioning.",
-      details: ["Application Analysis", "System Optimization", "Tribology Studies"]
+      title: "Molecular Strategy",
+      desc: "Our senior tribologists engineer custom fluid strategies for hardware commissioning and development.",
+      details: ["Application Mapping", "Hardware Compatibility", "Performance Stress Tests"]
     },
     {
-      title: "Tailor Made Blends",
-      desc: "Custom formulations for unique applications not covered by standard product lines.",
-      details: ["Private Labeling", "Custom Viscosities", "Additive Tuning"]
+      title: "Precision Blending",
+      desc: "Custom chemical formulations engineered for unique extreme-temp or zero-pressure environments.",
+      details: ["Private Label Ops", "Custom Viscosity Tuning", "Advanced Additive Logic"]
     },
     {
-      title: "Oil Analysis",
-      desc: "Comprehensive diagnostic programs to monitor equipment health and fluid longevity.",
-      details: ["Wear Meta Analysis", "Contamination Tracking", "Predictive Maintenance"]
+      title: "Digital Oil Analysis",
+      desc: "Comprehensive diagnostic programs powered by data to predict maintenance and extend life.",
+      details: ["Wear Meta-Tracking", "Contamination Analysis", "Predictive Diagnostics"]
     }
   ];
 
   return (
-    <section id="services" className="py-32 bg-white overflow-hidden relative">
+    <section id="services" className="py-40 bg-slate-50 relative overflow-hidden">
+      <div className="absolute top-0 right-0 p-24 text-[20vw] font-black text-slate-100/50 -z-10 leading-none select-none">
+        SERVICE
+      </div>
+      
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <p className="text-blue-600 font-bold uppercase tracking-widest text-xs">Specialized Support</p>
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">
-            Beyond the Product.
+        <div className="max-w-3xl mb-32 space-y-8">
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-600">Expertise on Demand</span>
+          <h2 className="text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[0.95]">
+            Engineering<br />Beyond the Fluid.
           </h2>
-          <p className="text-lg text-slate-600 font-light">
-            We provide the technical expertise needed to ensure your systems run at peak efficiency with zero unplanned downtime.
+          <p className="text-xl text-slate-500 font-light max-w-xl leading-relaxed italic border-l-2 border-blue-600 pl-8">
+            "Hardware is only as resilient as the chemistry protecting it."
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-16 lg:gap-8">
           {services.map((service, i) => (
-            <div key={i} className="flex flex-col">
-              <div className="flex items-center gap-4 mb-8">
-                 <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400">
+            <div key={i} className="flex flex-col bg-white p-12 rounded-[40px] shadow-sm border border-slate-100 group hover:shadow-2xl hover:border-blue-100 transition-all duration-700">
+              <div className="flex items-center gap-6 mb-12">
+                 <div className="w-16 h-16 rounded-full bg-slate-950 flex items-center justify-center font-bold text-white text-xl italic group-hover:rotate-[360deg] transition-transform duration-1000">
                     0{i+1}
                  </div>
-                 <h3 className="text-2xl font-bold text-slate-900">{service.title}</h3>
+                 <h3 className="text-3xl font-black text-slate-900 tracking-tight leading-none uppercase">{service.title}</h3>
               </div>
-              <p className="text-slate-500 mb-8 font-light leading-relaxed">
+              <p className="text-slate-500 mb-12 font-light leading-relaxed text-lg">
                 {service.desc}
               </p>
-              <ul className="space-y-3 mt-auto border-t border-slate-100 pt-8">
-                {service.details.map((detail, j) => (
-                  <li key={j} className="flex items-center gap-3 text-sm font-medium text-slate-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                    {detail}
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-auto space-y-6">
+                <div className="h-px w-full bg-slate-100" />
+                <ul className="space-y-4">
+                  {service.details.map((detail, j) => (
+                    <li key={j} className="flex items-center gap-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
